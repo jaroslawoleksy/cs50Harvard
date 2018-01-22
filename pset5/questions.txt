@@ -1,0 +1,25 @@
+0.  According to Merriam-Webster's Medical Dictionary,
+    pneumonoultramicroscopicsilicovolcanoconiosis is a
+    pneumoconiosis caused by inhalation of very fine
+    silicate or quartz dust.
+1.  It returns the resource usage
+2.  16
+3.  It's because the calculate function accepts pointers to structs as arguments. Then it uses two members of each struct.
+    Another construction of the function could be with values but it would have to accept 4 arguments which would be more complicated.
+4.  Check each char in the fp file until the end of file.
+    If the char is a letter or an apostrophe that is not the first char of the word, append the c char to the word array
+    If the current word's length is greater than LENGTH (45), give up the word because it's too long - go through the remainding chars
+    of the word and set index to 0 so you could check the next word. Do the same if you encounter a digit as a char.
+    In another case we found a word if the index > 0. We need to terminate the word with '\0'
+    Then you add the number of words found and check the spelling of the word. If it is misspelled you add 1 to misspellings var
+5.  If the string is too long you could get a buffer overflow error.
+6.  So that we weren't able to change it's values when implementing the functions,
+7.  I used tries. Each node consists of a bool var is_word checking if the word finishes here and with a pointer to an array of 27 children
+    of the node for each letter of the alphabet and the apostrophe. 
+8.  It is still slower than the staff's solution but I found out that the trie approach should be much faster in searching for the words
+    from the dictionary, which would probably take the longest time if I used hashtables. Of course the loading and freeing the trie takes
+    some time but that's the cost for the quick search.
+9.  I tried to give up initializing each node with NULL values for the children array. Everything seemed to work just fine but I received
+    valgrind initialization errors so I decided to add the initialization again in order to avoid any possible errors.
+10. The loading and unloading of the trie is quite time-consuming. I haven't been able to figure out how to shorten the time. Especially
+    that the staff's solution was 2 or 3 times faster. I didn't want to give up the initialization of the children array.

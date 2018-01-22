@@ -1,0 +1,27 @@
+0.  BMP - 4 294 967 296
+    GIF - 256
+    JPEG - 167,777,216
+    PNG - 281,474,976,710,656
+1.  GIF
+2.  Lossy - reducing the size of the file the quality of the image is also reduced.
+    Loseless - reducing the file size doesn't affect the quality of the image.
+3.  JPEG
+4.  The file is not phisically removed - the system only changes the first letter of the file name and moves the clusters of the file
+    to the list of free clusters on the hard drive.
+5.  You should sanitaze the disk with some tool. The best way is to overwrite all the data on the hard drive so it cannot be recovered.
+6.  stdint.h is a header file that allows us to use the special int types (intN_t and uintN_t)
+7.  They are used to declare exact-width integers. 
+8.  1, 4, 4, 2
+9.  0x42 0x4d (BM)
+10. bfSize is the size of the file in bytes,
+    biSize is the size of the BITMAPINFOHEADER struct in bytes (40 bytes in our case),
+11. biHight is negative for top-down bitmaps with its origin in the upper-left corner
+12. biBitCount,
+13. it could happen if the system fails to create the outfile file.
+14. it's because we want to write BITMAPFILEHEADER and BITMAPINFOHEADER just one time
+    and then copy the bitmap pixel by pixel (3 bytes each time),
+15. 3
+    (4 - (9 % 4)) % 4 = (4 - 1) % 4 = 3 % 4 = 3
+16. it skips over the given padding in the input file
+17. SEEK_CUR is the current position of the file pointer
+18. Rick Astley
